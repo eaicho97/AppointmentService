@@ -1,10 +1,10 @@
-package com.object.Appointment.dtos;
+package com.object.Appointment.dto;
 
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
+@Builder
 public class DogDTO {
     private Long id;
     private String name;
