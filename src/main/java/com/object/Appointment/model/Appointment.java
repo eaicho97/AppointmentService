@@ -1,25 +1,25 @@
 package com.object.Appointment.model;
 
+import com.object.Appointment.dto.DogDTO;
+import com.object.Appointment.dto.OwnerDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
-@Data
 @Entity(name = "appointments")
+@Data
 public class Appointment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
-    private LocalDateTime appointmentDateTime;
+    private String appointmentDateTime;
     private String notes;
-
-    @Column(nullable = false)
     private Long dogId;
-
-    @Column(nullable = false)
     private Long ownerId;
 
+    @Transient
+    private DogDTO dog;
+
+    @Transient
+    private OwnerDTO owner;
 }
